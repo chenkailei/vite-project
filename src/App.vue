@@ -28,6 +28,25 @@
     import teleport from './components/teleport.vue'
     // KeepAlive
     import KeepAlive from './components/keepAlive.vue'
+    // provideandinject
+    import provideandinject from './components/provideandinject.vue'
+    // eventBus
+    import eventBus from './components/eventBus.vue'
+    // mitt
+    import mitt from './components/mitt.vue'
+    // tsx
+    import tsx from './components/tsx.vue'
+    // v-model
+    import Vmodel from './components/v-model.vue'
+    // direct
+    import direct from './components/direct.vue'
+    // vMove
+    import vMove from './components/vMove.vue'
+    // vLazy
+    import vLazy from './components/v-lazy.vue'
+    // vLazy
+    import useAttrs from './components/useAttrs.vue'
+    
     import { ref, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUpdated, onRenderTracked, onRenderTriggered, defineAsyncComponent } from 'vue';
     
     const componentsList = [
@@ -37,7 +56,16 @@
         {name:'watchEffect监听',ref:watchEffect},
         {name:'父子组件传值',ref:defineProps},
         {name:'teleport内置组件',ref:teleport},
-        {name:'KeepAlive缓存',ref:KeepAlive}
+        {name:'KeepAlive缓存',ref:KeepAlive},
+        {name:'provide和inject',ref:provideandinject},
+        {name:'eventBus',ref:eventBus},
+        {name:'mitt',ref:mitt},
+        {name:'tsx',ref:tsx},
+        {name:'v-model',ref:Vmodel},
+        {name:'direct',ref:direct},
+        {name:'vMove',ref:vMove},
+        {name:'vLazy',ref:vLazy},
+        {name:'useAttrs和useSlots',ref:useAttrs},
     ]
 
     const activeValue = ref(0)
@@ -86,9 +114,11 @@
 </script>
 <style scoped>
 .component{
+    width: 100%;
     flex: 1;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
+    margin: 50px auto;
 }
 </style>
