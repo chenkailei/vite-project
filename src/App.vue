@@ -37,7 +37,7 @@
     // tsx
     import tsx from './components/tsx.vue'
     // v-model
-    import Vmodel from './components/v-model.vue'
+    import V_model from './components/v-model.vue'
     // direct
     import direct from './components/direct.vue'
     // vMove
@@ -46,6 +46,12 @@
     import vLazy from './components/v-lazy.vue'
     // vLazy
     import useAttrs from './components/useAttrs.vue'
+    // 全局指令
+    import globalInstructions from './components/globalInstructions.vue'
+    // 使用自定义插件
+    import useLoading from './components/useLoading.vue'
+    // css
+    import css from './components/css.vue'
     
     import { ref, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUpdated, onRenderTracked, onRenderTriggered, defineAsyncComponent } from 'vue';
     
@@ -61,11 +67,14 @@
         {name:'eventBus',ref:eventBus},
         {name:'mitt',ref:mitt},
         {name:'tsx',ref:tsx},
-        {name:'v-model',ref:Vmodel},
+        {name:'v-model',ref:V_model},
         {name:'direct',ref:direct},
         {name:'vMove',ref:vMove},
         {name:'vLazy',ref:vLazy},
         {name:'useAttrs和useSlots',ref:useAttrs},
+        {name:'全局变量',ref:globalInstructions},
+        {name:'使用自定义插件Loading',ref:useLoading},
+        {name:'css完整性',ref:css},
     ]
 
     const activeValue = ref(0)

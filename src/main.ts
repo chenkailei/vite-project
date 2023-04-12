@@ -5,19 +5,33 @@ import 'element-plus/dist/index.css'
 import App from './App.vue'
 import mitt from 'mitt'
 const Mit = mitt()
+import loading from './components/customPlugs/loading'
 
-//TypeScript注册
-// 由于必须要拓展ComponentCustomProperties类型才能获得类型提示
-declare module "vue" {
-    export interface ComponentCustomProperties {
-        $Bus: typeof Mit
-    }
-}
-
-const app = createApp(App)
+export const app = createApp(App)
 
 //Vue3挂载全局API
 app.config.globalProperties.$Bus = Mit 
+//Vue3挂载全局API
+app.config.globalProperties.$custom = '自定义的' 
+app.config.globalProperties.$function = {
+    addStr<T>(str:T){
+        return '自定义='+str
+    }
+}
+
+type CustomFunction = {
+    addStr<T>(str:T):string
+}
+//TypeScript注册
+// 由于必须要拓展ComponentCustomProperties类型才能获得类型提示
+declare module "@vue/runtime-core" {
+    export interface ComponentCustomProperties {
+        $Bus: typeof Mit,
+        $custom:string,
+        $function:CustomFunction
+    }
+}
 
 app.use(ElementPlus)
-createApp(App).mount('#app')
+app.use(loading)
+app.mount('#app')
