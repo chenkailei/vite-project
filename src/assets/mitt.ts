@@ -1,2 +1,2 @@
-import imtt from 'mitt'
-export default new imtt()
+import mitt from 'mitt'
+export default new mitt()

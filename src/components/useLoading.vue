@@ -3,7 +3,7 @@
 </template>
 <script setup lang='ts'>
 import { getCurrentInstance, } from 'vue'
-const {proxy} = getCurrentInstance()
+const {proxy}:any = getCurrentInstance()
 console.log(proxy);
 
 const open = ()=> {

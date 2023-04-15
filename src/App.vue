@@ -52,7 +52,12 @@
     import useLoading from './components/useLoading.vue'
     // css
     import css from './components/css.vue'
-    
+    // nextTick
+    import nextTick from './components/nextTick.vue'
+    // 语法糖
+    import syntaxSugar from './components/syntaxSugar.vue'
+    // 环境变量
+    import environmentVariable from './components/environmentVariable.vue'
     import { ref, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUpdated, onRenderTracked, onRenderTriggered, defineAsyncComponent } from 'vue';
     
     const componentsList = [
@@ -75,9 +80,13 @@
         {name:'全局变量',ref:globalInstructions},
         {name:'使用自定义插件Loading',ref:useLoading},
         {name:'css完整性',ref:css},
+        {name:'nextTick',ref:nextTick},
+        {name:'vue3.3.25及以上版本语法糖',ref:syntaxSugar},
+        {name:'测试环境、生产环境',ref:environmentVariable},
     ]
 
     const activeValue = ref(0)
+    activeValue.value = componentsList.length -1
 
     const title = ref("张三")
     const yes = ()=> console.log('传到父组件了')

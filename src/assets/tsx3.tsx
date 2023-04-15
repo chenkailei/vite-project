@@ -8,7 +8,7 @@ interface Props {
     name?:String
 }
 
-const A = (_,{slots}) => (
+const A = (_:any,{slots}:any) => (
     <>
         <div>{slots.default?  slots.default() : '没有插槽'}</div>
         <div>{slots.foo?.()}</div>
